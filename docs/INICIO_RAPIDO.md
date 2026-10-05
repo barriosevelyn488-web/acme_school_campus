@@ -11,10 +11,10 @@ npm.cmd install
 Copy-Item .env.example .env
 ```
 
-Abre `.env` y escribe los datos de conexión de tu MySQL. Importa `docs/DATABASE_SCHEMA.sql` con MySQL Workbench o ejecuta este comando si tienes instalado el cliente `mysql`:
+Abre `.env` y escribe los datos de conexión de tu MySQL. Importa `database/schema.sql` con MySQL Workbench o ejecuta este comando si tienes instalado el cliente `mysql`:
 
 ```powershell
-cmd.exe /c "mysql -u root -p < docs/DATABASE_SCHEMA.sql"
+cmd.exe /c "mysql -u root -p < database/schema.sql"
 ```
 
 El archivo crea la base `acme_school` y agrega algunos registros de ejemplo.
@@ -43,4 +43,4 @@ git commit -m "feat: agregar reportes académicos"
 
 ## Sobre el esquema SQL
 
-`docs/DATABASE_SCHEMA.sql` se preparó usando como referencia el diagrama compartido. Si tienes el archivo SQL original, revisa los nombres y tipos de las columnas antes de usarlo con esa base.
+`database/schema.sql` se preparó usando como referencia el diagrama compartido. Si tienes el archivo SQL original, revisa los nombres y tipos de las columnas antes de usarlo con esa base.
