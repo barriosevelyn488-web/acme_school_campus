@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* Colores y tipografía principales */
+:root {
+  color-scheme: dark;
+  font-family: 'DM Sans', sans-serif;
+  font-synthesis: none;
+  color: #e8edf7;
+  background: #0d1421;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at 73% 0%, #18263a 0%, #0d1421 43%);
+  font-size: 14px;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+/* Barra lateral de navegación */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 244px;
+  padding: 28px 18px;
+  border-right: 1px solid #1c2634;
+  background: #0b111c;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 7px;
+  color: #f4f7fc;
+  font-family: Manrope, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  border-radius: 10px;
+  background: #5877f7;
+  box-shadow: 0 6px 20px #5877f744;
+}
+
+.brand-light {
+  color: #8995a9;
+  font-weight: 500;
+}
+
+.side-label {
+  margin: 48px 9px 13px;
+  color: #657186;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 5px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: #a2aec1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-item span {
+  width: 18px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.nav-item.active {
+  background: #192744;
+  color: #9eb2ff;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 14px 10px;
+  border-top: 1px solid #1c2634;
+  color: #91a0b5;
+  font-size: 12px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #4cdda0;
+  box-shadow: 0 0 10px #4cdda077;
+}
+
+/* Encabezado y contenido de la página */
+main {
+  max-width: 1600px;
+  margin-left: 244px;
+  padding: 0 48px;
+}
+
+.topbar {
+  display: flex;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #202b3a;
+}
+
+.breadcrumb {
+  color: #9ca9bb;
+  font-size: 13px;
+}
+
+.breadcrumb span {
+  padding: 0 9px;
+  color: #546176;
+}
+
+.user-pill {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #172132;
+  color: #aeb9ca;
+  font-size: 12px;
+}
+
+.page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 43px 0 29px;
+}
+
+.eyebrow {
+  color: #8092ad;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.page-heading h1 {
+  margin: 9px 0 6px;
+  color: #f4f6fa;
+  font-family: Manrope, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.page-heading p {
+  margin: 0;
+  color: #97a4b7;
+  font-size: 14px;
+}
+
+.date-chip {
+  padding: 9px 12px;
+  border: 1px solid #293649;
+  border-radius: 7px;
+  color: #b4c0d1;
+  font-size: 12px;
+}
+
+/* Lista de reportes y panel de vista previa */
+.report-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(490px, 1.65fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.report-list,
+.preview-panel {
+  border: 1px solid #263346;
+  border-radius: 12px;
+  background: #111b29;
+  box-shadow: 0 12px 40px #050a1260;
+}
+
+.report-list {
+  padding: 19px 13px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 6px 13px;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #e9eef8;
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.muted,
+.count {
+  color: #8290a4;
+  font-size: 11px;
+}
+
+.report-card {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  margin: 2px 0;
+  padding: 12px 10px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.report-card:hover {
+  background: #172335;
+}
+
+.report-card.selected {
+  border-color: #2b426c;
+  background: #192744;
+}
+
+.icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  place-items: center;
+  border-radius: 9px;
+  font-size: 17px;
+}
+
+.blue {
+  background: #1e345a;
+  color: #92b6ff;
+}
+
+.violet {
+  background: #30264e;
+  color: #c1a7ff;
+}
+
+.amber {
+  background: #42341e;
+  color: #f5c36e;
+}
+
+.green {
+  background: #1d3a35;
+  color: #73dbb1;
+}
+
+.pink {
+  background: #43283b;
+  color: #ec9bc5;
+}
+
+.card-copy {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.card-copy strong {
+  color: #e4eaf4;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-copy small {
+  color: #8997aa;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.arrow {
+  margin-left: auto;
+  color: #64758d;
+  font-size: 20px;
+}
+
+/* Filtros y botón de descarga */
+.preview-panel {
+  min-height: 430px;
+  padding: 22px 22px 14px;
+}
+
+.preview-panel .section-title {
+  padding: 0 0 18px;
+}
+
+.preview-panel h2 {
+  margin-top: 6px;
+  font-size: 19px;
+}
+
+.count {
+  padding: 6px 9px;
+  border-radius: 20px;
+  background: #1b2a40;
+  color: #a9bad2;
+}
+
+.filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding-bottom: 15px;
+}
+
+.filter-wrap {
+  display: grid;
+  gap: 6px;
+  color: #94a2b6;
+  font-size: 11px;
+}
+
+.filter-wrap select {
+  min-width: 180px;
+  height: 35px;
+  padding: 0 10px;
+  border: 1px solid #344259;
+  border-radius: 6px;
+  background: #101a28;
+  color: #dce5f2;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.primary-button {
+  margin-left: auto;
+  padding: 10px 13px;
+  border: 0;
+  border-radius: 7px;
+  background: #5a78f6;
+  box-shadow: 0 5px 15px #4565e433;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.primary-button:hover {
+  background: #6d88ff;
+}
+
+.primary-button span {
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+/* Tabla de resultados y mensajes */
+.message {
+  margin-bottom: 12px;
+  padding: 9px 11px;
+  border-radius: 6px;
+  background: #152235;
+  color: #95a8c3;
+  font-size: 11px;
+}
+
+.message.success {
+  color: #9dd7b9;
+}
+
+.table-wrap {
+  max-height: 365px;
+  overflow: auto;
+  border: 1px solid #263346;
+  border-radius: 7px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  text-align: left;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  padding: 11px 10px;
+  background: #18263a;
+  color: #a7b5c9;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+td {
+  padding: 11px 10px;
+  border-top: 1px solid #222f40;
+  color: #cfdae8;
+  white-space: nowrap;
+}
+
+tbody tr:hover {
+  background: #172436;
+}
+
+.empty {
+  padding: 26px;
+  color: #8997aa;
+  text-align: center;
+}
+
+.panel-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 1px 0;
+  color: #78879b;
+  font-size: 10px;
+}
+
+.live {
+  color: #7fcba8;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+}
+
+.live i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #4cdda0;
+}
+
+footer {
+  padding: 25px 2px;
+  color: #6e7d91;
+  font-size: 11px;
+}
+
+footer span {
+  padding: 0 5px;
+  color: #45536a;
+}
+
+/* Ajustes para tabletas */
+@media (max-width: 1000px) {
+  main {
+    padding: 0 25px;
+  }
+
+  .report-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .report-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+  }
+
+  .report-list .section-title {
+    grid-column: 1 / -1;
+  }
+
+  .report-card {
+    margin: 0;
+  }
+}
+
+/* Ajustes para teléfonos */
+@media (max-width: 650px) {
+  .sidebar {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 13px 17px;
+  }
+
+  .sidebar nav,
+  .side-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  main {
+    margin: 0;
+    padding: 0 16px;
+  }
+
+  .topbar {
+    height: 53px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 27px 0 20px;
+  }
+
+  .page-heading h1 {
+    font-size: 25px;
+  }
+
+  .report-list {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-panel {
+    padding: 16px 13px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  .primary-button {
+    margin-left: 0;
+  }
+
+  .table-wrap {
+    max-height: 300px;
+  }
+}
